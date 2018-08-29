@@ -133,6 +133,9 @@ googleAnalytics = ""
 	
 [sitemap]
 	filename = "sitemap.xml"
+	
+[frontmatter]
+	date = ["date", "publishDate", "lastmod", ":git"]
 ```
 
 
