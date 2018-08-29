@@ -53,8 +53,8 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] robots.txt
 		- [x] reference sitemap.xml
 	- [x] Meta-Robots via front matter
-	- [ ] SEO Title via front matter
-	- [ ] Meta description via front matter
+	- [x] SEO Title via front matter
+	- [x] Meta description via front matter
 	- [ ] Schema.org markup
 
 - [ ] Business / 
