@@ -1,0 +1,89 @@
+/*********************
+VARIABLES
+*********************/
+
+$background_color_body: #fff;
+$background_color_logo: #202020;
+$background_color_breadcrumb: #fff;
+$background_color_search: #fff;
+$background_color_nav: #202020;
+$background_color_main: #fff;
+$background_color_teaser: #fff;
+$background_color_sidebar: #fff;
+$background_color_footer: #202020;
+$background_color_consent: #fff;
+$background_color_consent_agree: #f9f9f9;
+$background_color_consent_agree_border: #000;
+$background_color_consent_button: #548330;
+$background_color_consent_button_border: #548330;
+
+$background_color_code: #f9f9f9;
+
+$text_color_body: #515151;
+$text_color_logo: #ffffff;
+$text_color_breadcrumb: #515151;
+$text_color_search: #515151;
+$text_color_nav: #ffffff;
+$text_color_main: #515151;
+$text_color_teaser: #515151;
+$text_color_sidebar: #515151;
+$text_color_footer: #ffffff;
+$text_color_consent: #515151;
+$text_color_consent_button: #fff;
+
+$text_color_code: #000;
+$text_color_inline_code: #BF3B48;
+
+$link_color: #1C77BE;
+$link_color_logo: #fff;
+$link_color_nav: #fff;
+$link_color_footer: #fff;
+
+$font_family: "PT Sans", Helvetica, Arial, sans-serif;
+$font_family_code: Menlo, Monaco, "Courier New", monospace;
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+	@if $point == mobileonly {
+		@media (max-width: 37.5em)  { @content ; }
+	}
+	@else if $point == phablet {
+		@media (min-width: 37.5em) and (max-width: 56.25em)  { @content ; }
+	}
+	@else if $point == tablet {
+		@media (min-width: 56.25em) and (max-width: 75em) { @content ; }
+	}
+	@else if $point == laptop {
+		@media (min-width: 75em) and (max-width: 112.5em) { @content ; }
+	}
+	@else if $point == desktop {
+		@media (min-width: 112.5em) { @content ; }
+	}
+}
+
+/*********************
+Imports
+*********************/
+
+@import "normalize";
+
+@import "grid";
+
+@import "typography";
+
+@import "logo.scss";
+@import "breadcrumb.scss";
+@import "search.scss";
+
+@import "nav.scss";
+
+@import "main.scss";
+@import "teaser.scss";
+@import "sidebar.scss";
+@import "footer.scss";
+
+@import "consent.scss";

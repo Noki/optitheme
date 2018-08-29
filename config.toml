@@ -1,0 +1,66 @@
+theme = "optitheme"
+baseurl = "https://example.com/"
+title = "Optitheme"
+defaultContentLanguage = "en"
+LanguageCode = "en"
+
+paginate = 3
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomyTerm"]
+canonifyurls = true
+enableRobotsTXT = true
+timeout=20000
+enableGitInfo = true
+
+googleAnalytics = ""
+
+[params]
+	privacyPolicy = "privacy.html"
+
+[languages]
+    [languages.en]
+		weight = 1
+        languageName = "English"
+        languageCode = "en"
+		url = "/"		
+		title = "Optitheme - EN"
+
+    [languages.de]
+		weight = 2
+        languageName = "Deutsch"
+        languageCode = "de"
+        url = "/de/"
+		title = "Optitheme - DE"	
+		
+[menu]
+	[[menu.main]]
+		identifier = "about"
+		name = "About Optitheme"
+		pre = ""
+		url = "/about/"
+		weight = -110
+
+	[[menu.main]]
+		identifier = "de/about"
+		name = "Über Optitheme"
+		pre = ""
+		url = "/de/about/"
+		weight = -110	
+
+[taxonomies]
+  categories = "categories"	
+		
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = false
+    useSessionStorage = false
+
+[imaging]
+	resampleFilter = "Lanczos"
+	quality = 80
+	anchor = "smart" 
+	
+[sitemap]
+	filename = "sitemap.xml"

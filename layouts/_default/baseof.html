@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html {{- with .Site.LanguageCode}} lang="{{.}}"{{end -}}>
+{{partial "head.html" . -}}
+<body>
+<div id="ot_container">
+	<input type="checkbox" id="ot_menu_check">
+	<input type="checkbox" id="ot_consent_check">
+	<div id="ot_header">
+		<div id="ot_logo">{{ partial "logo.html" . }}</div>
+		<div id="ot_breadcrumb">{{ partial "breadcrumb.html" . }}</div>
+		<div id="ot_search">{{ partial "search.html" . }}</div>
+	</div>
+	<div id="ot_nav">{{ partial "nav.html" . }}</div>
+	<div id="ot_content">
+		<div id="ot_main">{{ block "main" . }}{{ end }}</div>
+		<div id="ot_teaser">{{ partial "teaser.html" . }}</div>
+		<div id="ot_sidebar">{{ partial "sidebar.html" . }}</div>
+		<div id="ot_footer">{{- partial "footer.html" . }}</div>
+	</div>
+	<div id="ot_consent">{{- partial "consent.html" .}}</div>
+</div>
+</body>
+</html>

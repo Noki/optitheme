@@ -1,0 +1,14 @@
+[home]
+other = "Startseite"
+
+[languages]
+other = "Sprachen"
+
+[consent-text]
+other= "Cookies helfen uns bei der Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich mit unserer Benutzung von Cookies einverstanden."
+
+[consent-privacy-policy]
+other = "Datenschutzerklärung lesen"
+
+[consent-accept]
+other = "Ich stimme zu"

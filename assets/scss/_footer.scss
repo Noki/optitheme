@@ -1,0 +1,24 @@
+#ot_footer {
+	background-color:$background_color_footer;
+	color:$text_color_footer;
+	
+}
+
+#ot_footer ul {
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+#ot_footer li {
+	display: inline;
+}
+
+#ot_footer li+li:before {
+    padding: 0 0.5em;
+    content: "|\00a0";
+}
+
+#ot_footer a {
+	color: $link_color_footer;
+}

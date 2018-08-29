@@ -1,0 +1,27 @@
+#ot_nav {
+	background-color:$background_color_nav;
+	color:$text_color_nav;
+	padding: 2em 2em;
+}
+
+#ot_nav ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+#ot_nav li {
+	display: block;
+}
+
+#ot_nav a {
+	color: $link_color_nav;
+	// text-decoration: underline;
+}
+
+#ot_nav a:hover, #ot_nav a:focus {
+	text-decoration: underline;
+}
+
+#ot_nav active {
+	font-weight: bold;
+}

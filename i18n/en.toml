@@ -1,0 +1,14 @@
+[home]
+other = "Home"
+
+[languages]
+other = "Languages"
+
+[consent-text]
+other= "This website uses cookies to ensure you get the best experience on our website."
+
+[consent-privacy-policy]
+other= "Read privacy policy"
+
+[consent-agree]
+other = "I agree"

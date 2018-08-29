@@ -1,0 +1,21 @@
+{{ $sections := .sections }}
+{{ $level := .level }}
+{{ $path := .path }}
+{{ $dir := .dir }}
+
+{{ range $sections }}
+	{{ $section := index $path $level }}
+	{{ $aux := split .URL "/" }}
+	{{if eq $section (index $aux $level) }}
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			{{if ne .URL $dir }}<a itemprop="item" href="{{.URL}}">{{ end }}
+			<span itemprop="name">{{ .Title }}</span>
+			<span itemprop="position" content="1"></span>
+			{{if ne .URL $dir }}</a>{{ end }}
+			
+			{{ if gt (len .Sections) 0 }}
+			  	{{ partial "breadcrumbs_recursive.html" (dict "sections" .Sections "level" (add $level 1) "path" $path "dir" $dir) }}
+			{{ end }}
+		</li>
+	{{ end }}
+{{ end }}

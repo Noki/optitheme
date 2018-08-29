@@ -1,0 +1,12 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+	<title>{{- if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}</title>
+	<meta name="description" content="{{ .Description }}" />
+	<meta name="robots" content="{{- with .Params.robots }}{{ . }}{{ else }}index,follow{{ end -}}">
+	{{$styles := resources.Get "scss/layout.scss" | toCSS | minify -}}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+	<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+	{{/*<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">*/}}
+	{{ template "_internal/google_analytics_async.html" . }}
+</head>

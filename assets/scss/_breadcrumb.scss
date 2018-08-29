@@ -1,0 +1,22 @@
+#ot_breadcrumb {
+	background-color:$background_color_breadcrumb;
+	color:$text_color_breadcrumb;
+	padding: 1em 5em;
+}
+
+#ot_breadcrumb ul {
+	padding-left: 0;
+	list-style: none;
+	line-height: 1;
+	margin: 0;
+	display:inline-block;
+}
+
+#ot_breadcrumb li {
+	display: inline;
+}
+
+#ot_breadcrumb li+li:before {
+    padding: 0.5em;
+    content: "/\00a0";
+}

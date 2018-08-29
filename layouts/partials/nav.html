@@ -1,0 +1,16 @@
+			<ul>
+				<li><a href="{{ .Site.BaseURL }}"><i class="fas fa-home"></i> <span>{{ i18n "home" }}</span></a></li>
+				{{ range .Site.Menus.main -}}
+				<li><a href="{{ .URL }}">{{- .Pre }} <span>{{- .Name -}}</span></a></li>
+				{{ end }}
+				{{- if ge (len $.Site.Home.AllTranslations) 2 }}
+				<li>					
+					<i class="fas fa-font"></i> <span>{{ i18n "languages" }}</span>					
+					<ul >
+						{{ range $.Site.Home.AllTranslations -}}
+						<li><a href="{{ .Permalink }}"><span>{{ .Language.LanguageName }}</span></a></li>
+						{{ end }}
+					</ul>
+				</li>
+				{{end}}
+			</ul>

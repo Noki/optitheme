@@ -1,0 +1,17 @@
+<div>
+	<span>{{ i18n "consent-text" }} <a href="{{ .Site.BaseURL }}{{.Site.Params.privacyPolicy}}">{{ i18n "consent-privacy-policy" }}</a></span><label for="ot_consent_check">{{ i18n "consent-accept" }}</label>
+</div>
+<script type="text/javascript">
+	if (document.cookie.split(';').filter(function(item) {
+		return item.indexOf('_c=ok') >= 0
+	}).length) {
+		document.getElementById("ot_consent_check").checked = true;
+	}
+	document.getElementById("ot_consent_check").addEventListener( 'change', function() {
+		if(this.checked) {
+			var a=new Date;
+			a.setTime(a.getTime()+31536e6),document.cookie="_c=ok; expires="+a.toGMTString()+"; path=/";
+			document.getElementById("ot_consent_check").checked = true;
+		}
+	});	
+</script>		
