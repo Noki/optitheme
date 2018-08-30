@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 	<title>{{- if .Params.ot_seo_title -}}{{.Params.ot_seo_title}}{{- else if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}</title>
 	<meta name="description" content="{{- if .Params.ot_meta_description -}}{{.Params.ot_meta_description}}{{- else -}}{{ .Description }}{{- end -}}" />
-	<meta name="robots" content="{{- with .Params.robots }}{{ . }}{{ else }}index,follow{{ end -}}">
+	<meta name="robots" content="{{- with .Params.ot_meta_robots }}{{ . }}{{ else }}index,follow{{ end -}}">
 	{{$styles := resources.Get "scss/layout.scss" | toCSS | minify -}}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
