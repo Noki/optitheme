@@ -6,7 +6,6 @@
 	<meta name="robots" content="{{- with .Params.ot_meta_robots }}{{ . }}{{ else }}index,follow{{ end -}}">
 	<link rel="canonical" href="{{ .Permalink }}">
 	{{ with resources.Get "scss/layout.scss" | toCSS | minify }}<style>{{ .Content | safeCSS }}</style>{{ end }}
-	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
 	{{/*<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">*/}}
 	{{ template "_internal/google_analytics_async.html" . }}
