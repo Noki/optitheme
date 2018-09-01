@@ -48,6 +48,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 		- [ ] SEO 
 
 - [ ] SEO
+	- [x] self referencing canonical tag
 	- [x] sitemap.xml	
 		- [ ] do not include noindex in sitemap.xml
 	- [x] robots.txt
