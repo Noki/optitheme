@@ -1,4 +1,27 @@
 #ot_main {
-  background-color:$background_color_main;
-  color:$text_color_main;
+	background-color:$background_color_main;
+	color:$text_color_main;
 }
+
+#ot_main {
+	figure {
+		margin: 1em 0;
+		img {
+			margin: 0;
+			width: 100%;
+			height: auto;
+		}
+		h4 {
+			margin: 0;
+		}
+	}
+	figcaption {
+		margin-top: 0.25em;
+		padding: 0.5em;
+		background-color:$background_color_figcaption;
+		border-radius: 5px;
+		p {
+			margin:0;
+		}
+	}
+}	
