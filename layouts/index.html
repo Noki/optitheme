@@ -11,10 +11,10 @@
 	<!-- range through corresponding content and list it -->
 	{{ if (ne .Params.ot_showlist false) }}
 		<ul>
-		{{ range .Pages }}
-				<li>
-					<a href="{{.Permalink}}">{{.Title}}</a>
-				</li>
+		{{ range where .Pages ".Params.ot_showinlist" "ne" false }}
+			<li>
+				<a href="{{.Permalink}}">{{.Title}}</a>
+			</li>
 		{{ end }}
 		</ul>
 	{{ end }}
