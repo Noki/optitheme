@@ -10,12 +10,17 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] Cookie consent at bottom
 	- [x] Footer with privacy, imprint, terms of service
 	- [x] Automatic TOC for long pages
+		- [x] Parameter to disable TOC
 	- [ ] Responsive images (modify figure template)
 	- [x] Breadcrumbs
 	- [ ] 404-Page
 	- [x] Multi language support with translations
 	- [ ] Meta data for author
-	- [ ] Teasertext for content listings
+	- [ ] Content listings
+		- [x] Parameter to disable listing
+		- [x] Parameter to filter unwanted entries
+		- [ ] Teasertext
+		- [ ] Date format
 	- [ ] Social sharing
 		- [ ] Facebook
 		- [ ] Twitter
@@ -31,6 +36,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] No external Fonts
 	- [x] Minified HTML
 		- [x] Disable Hugo Generator inject
+	- [x] Inline CSS	
 	- [x] Minified CSS
 	- [ ] Minified JavaScript
 	- [ ] Minified Images	
@@ -41,7 +47,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [ ] Validates in W3C
 	- [ ] Pass Mobile friendly test
 	- [ ] Score 100% in Google Lighthouse
-		- [ ] Best practice
+		- [ ] Performance
 		- [ ] Progressive Web App
 		- [ ] Best practice
 		- [ ] Accessability
