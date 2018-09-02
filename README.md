@@ -13,7 +13,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 		- [x] Parameter to disable TOC
 	- [ ] Responsive images (modify figure template)
 	- [x] Breadcrumbs
-	- [ ] 404-Page
+	- [x] 404-Page
 	- [x] Multi language support with translations
 	- [ ] Meta data for author
 	- [ ] Content listings
