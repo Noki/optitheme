@@ -1,6 +1,5 @@
-<div>
-	<span>{{ i18n "consent-text" }} <a href="{{ .Site.BaseURL }}{{.Site.Params.privacyPolicy}}">{{ i18n "consent-privacy-policy" }}</a></span><label for="ot_consent_check">{{ i18n "consent-accept" }}</label>
-</div>
+<span>{{ i18n "consent-text" }} <a href="{{ .Site.BaseURL }}{{.Site.Params.privacyPolicy}}">{{ i18n "consent-privacy-policy" }}</a></span>
+<label for="ot_consent_check">{{ i18n "consent-accept" }}</label>
 <script type="text/javascript">
 	if (document.cookie.split(';').filter(function(item) {
 		return item.indexOf('_c=ok') >= 0

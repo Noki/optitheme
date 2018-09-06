@@ -11,11 +11,11 @@ $background_color_main: #fff;
 $background_color_teaser: #fff;
 $background_color_sidebar: #fff;
 $background_color_footer: #202020;
-$background_color_consent: #fff;
-$background_color_consent_agree: #f9f9f9;
-$background_color_consent_agree_border: #000;
+$background_color_consent: #202020;
+
+
 $background_color_consent_button: #548330;
-$background_color_consent_button_border: #548330;
+
 
 $background_color_code: #f9f9f9;
 $background_color_figcaption: #f9f9f9;
@@ -29,8 +29,8 @@ $text_color_main: #515151;
 $text_color_teaser: #515151;
 $text_color_sidebar: #515151;
 $text_color_footer: #ffffff;
-$text_color_consent: #515151;
-$text_color_consent_button: #fff;
+$text_color_consent: #ffffff;
+$text_color_consent_button: #ffffff;
 
 $text_color_code: #000;
 $text_color_inline_code: #BF3B48;
@@ -39,6 +39,7 @@ $link_color: #1C77BE;
 $link_color_logo: #fff;
 $link_color_nav: #fff;
 $link_color_footer: #fff;
+$link_color_consent: #1D8BDE;
 
 $font_family: "PT Sans", Helvetica, Arial, sans-serif;
 $font_family_code: Menlo, Monaco, "Courier New", monospace;

@@ -1,24 +1,29 @@
 #ot_consent {
 	background-color:$background_color_consent;
 	color:$text_color_consent;
+	padding: 1em;
+	text-align: center;
 }
 
-#ot_consent div {
+#ot_consent span {
 	display: inline-block;
-	background-color:$background_color_consent_agree;
-	padding: 1em;
-	border: 1px solid $background_color_consent_agree_border;
+	font-size: 14px;
+	margin-right: 1em;
 }
 
 #ot_consent label {
-	margin-left: 1em;
+	display: inline-block;
+	text-align: center;
 	color:$text_color_consent_button;
 	background-color:$background_color_consent_button;
 	padding: 0.25em 1em;
-	border: 2px solid $background_color_consent_button_border;
-	border-radius: 5px;
+
 }
 
 #ot_consent label:hover {
 	cursor: pointer;
+}
+
+#ot_consent a {
+	color: $link_color_consent;
 }
