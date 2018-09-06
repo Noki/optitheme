@@ -11,7 +11,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] Footer with privacy, imprint, terms of service
 	- [x] Automatic TOC for long pages
 		- [x] Parameter to disable TOC
-	- [ ] Responsive images (modify figure template)
+	- [x] Responsive images (modify figure template)
 	- [x] Breadcrumbs
 	- [x] 404-Page
 	- [x] Multi language support with translations
@@ -24,6 +24,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [ ] Social sharing
 		- [ ] Facebook
 		- [ ] Twitter
+	- [x] Favicon using parameter in config file
 
 - [ ] CSS
 	- [x] CSS-grid module layout
@@ -92,6 +93,7 @@ googleAnalytics = ""
 
 [params]
 	privacyPolicy = "privacy.html"
+	ot_favicon = "favicon.png"
 
 [languages]
     [languages.en]

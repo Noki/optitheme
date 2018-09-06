@@ -8,5 +8,6 @@
 	{{ with resources.Get "scss/layout.scss" | toCSS | minify }}<style>{{ .Content | safeCSS }}</style>{{ end }}
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
 	{{/*<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">*/}}
+	<link rel="shortcut icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
 	{{ template "_internal/google_analytics_async.html" . }}
 </head>

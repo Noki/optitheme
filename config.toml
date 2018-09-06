@@ -16,6 +16,7 @@ googleAnalytics = ""
 
 [params]
 	privacyPolicy = "privacy.html"
+	ot_favicon = "favicon.png"
 
 [languages]
     [languages.en]
