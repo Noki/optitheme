@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  color: $text_color_main_heading;
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -62,7 +62,7 @@ p {
 }
 
 strong {
-  color: #303030;
+  color: $text_color_main_strong;
 }
 
 

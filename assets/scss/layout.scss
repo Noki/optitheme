@@ -2,47 +2,48 @@
 VARIABLES
 *********************/
 
-$background_color_body: #fff;
-$background_color_logo: #202020;
-$background_color_breadcrumb: #fff;
-$background_color_search: #fff;
-$background_color_nav: #202020;
-$background_color_main: #fff;
-$background_color_teaser: #fff;
-$background_color_sidebar: #fff;
-$background_color_footer: #202020;
-$background_color_consent: #202020;
+$background_color_body: {{ .Site.Params.ot_background_color_body | default "#fff" }};
+$background_color_logo: {{ .Site.Params.ot_background_color_logo | default "#202020" }};
+$background_color_breadcrumb: {{ .Site.Params.ot_background_color_breadcrumb | default "#fff" }};
+$background_color_search: {{ .Site.Params.ot_background_color_search | default "#fff" }};
+$background_color_nav: {{ .Site.Params.ot_background_color_nav | default "#202020" }};
+$background_color_main: {{ .Site.Params.ot_background_color_main | default "#fff" }};
+$background_color_teaser: {{ .Site.Params.ot_background_color_teaser | default "#fff" }};
+$background_color_sidebar: {{ .Site.Params.ot_background_color_sidebar | default "#fff" }};
+$background_color_footer: {{ .Site.Params.ot_background_color_footer | default "#202020" }};
+$background_color_consent: {{ .Site.Params.ot_background_color_consent | default "#202020" }};
 
+$background_color_consent_button: {{ .Site.Params.ot_background_color_consent_button | default "#548330" }};
 
-$background_color_consent_button: #548330;
+$background_color_code: {{ .Site.Params.ot_background_color_code | default "#f9f9f9" }};
+$background_color_figcaption: {{ .Site.Params.ot_background_color_figcaption | default "#f9f9f9" }};
 
+$text_color_body: {{ .Site.Params.ot_text_color_body | default "#515151" }};
+$text_color_logo: {{ .Site.Params.ot_text_color_logo | default "#ffffff" }};
+$text_color_breadcrumb: {{ .Site.Params.ot_text_color_breadcrumb | default "#515151" }};
+$text_color_search: {{ .Site.Params.ot_text_color_search | default "#515151" }};
+$text_color_nav: {{ .Site.Params.ot_text_color_nav | default "#ffffff" }};
+$text_color_main: {{ .Site.Params.ot_text_color_main | default "#515151" }};
+$text_color_main_heading: {{ .Site.Params.ot_text_color_main_heading | default "#313131" }};
+$text_color_main_strong: {{ .Site.Params.ot_text_color_main_strong | default "#303030" }};
 
-$background_color_code: #f9f9f9;
-$background_color_figcaption: #f9f9f9;
+$text_color_teaser: {{ .Site.Params.ot_text_color_teaser | default "#515151" }};
+$text_color_sidebar: {{ .Site.Params.ot_text_color_sidebar | default "#515151" }};
+$text_color_footer: {{ .Site.Params.ot_text_color_footer | default "#ffffff" }};
+$text_color_consent: {{ .Site.Params.ot_text_color_consent | default "#ffffff" }};
+$text_color_consent_button: {{ .Site.Params.ot_text_color_consent_button | default "#ffffff" }};
 
-$text_color_body: #515151;
-$text_color_logo: #ffffff;
-$text_color_breadcrumb: #515151;
-$text_color_search: #515151;
-$text_color_nav: #ffffff;
-$text_color_main: #515151;
-$text_color_teaser: #515151;
-$text_color_sidebar: #515151;
-$text_color_footer: #ffffff;
-$text_color_consent: #ffffff;
-$text_color_consent_button: #ffffff;
+$text_color_code: {{ .Site.Params.ot_text_color_code | default "#000" }};
+$text_color_inline_code: {{ .Site.Params.ot_text_color_inline_code | default "#BF3B48" }};
 
-$text_color_code: #000;
-$text_color_inline_code: #BF3B48;
+$link_color: {{ .Site.Params.ot_link_color | default "#1C77BE" }};
+$link_color_logo: {{ .Site.Params.ot_link_color_logo | default "#fff" }};
+$link_color_nav: {{ .Site.Params.ot_link_color_nav | default "#fff" }};
+$link_color_footer: {{ .Site.Params.ot_link_color_footer | default "#fff" }};
+$link_color_consent: {{ .Site.Params.ot_link_color_consent | default "#1D8BDE" }};
 
-$link_color: #1C77BE;
-$link_color_logo: #fff;
-$link_color_nav: #fff;
-$link_color_footer: #fff;
-$link_color_consent: #1D8BDE;
-
-$font_family: "PT Sans", Helvetica, Arial, sans-serif;
-$font_family_code: Menlo, Monaco, "Courier New", monospace;
+$font_family: {{ .Site.Params.ot_font_family | default "\"PT Sans\", Helvetica, Arial, sans-serif" }};
+$font_family_code: {{ .Site.Params.ot_font_family_code | default "Menlo, Monaco, \"Courier New\", monospace" }};
 
 
 /*********************
