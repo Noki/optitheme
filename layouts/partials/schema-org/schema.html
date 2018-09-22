@@ -1,0 +1,15 @@
+{{- if or (in .Params.ot_schema_org "Person") }}
+<script type="application/ld+json">
+	{{- getJSON "data/schema-org-Person.json" | jsonify -}}
+</script> 
+{{ end -}}
+{{- if or (in .Params.ot_schema_org "Organization") }}
+<script type="application/ld+json">
+	{{- getJSON "data/schema-org-Organization.json" | jsonify -}}
+</script> 
+{{ end -}}
+{{- if or (in .Params.ot_schema_org "LodgingBusiness") }}
+<script type="application/ld+json">
+	{{- getJSON "data/schema-org-LodgingBusiness.json" | jsonify -}}
+</script> 
+{{ end -}}

@@ -184,5 +184,7 @@ date: 2018-08-29T00:00:00Z
 #   footer:
 #     name: "Name in footer menu"
 #    weight: -1
+
+# ot_schema_org: ["Person", "Organization", "LodgingBusiness"]
 ---
 ```
