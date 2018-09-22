@@ -14,7 +14,9 @@
 			<h3 class="post-title">
 				<a href="{{ .Permalink }}">{{ .Title }}</a>
 			</h3>
-			<div>{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+			{{ if ne .Params.ot_showdate false }}
+			<span class="ot_main_content_date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+			{{ end }}
 			<!-- use description as teaser if set -->
 			{{ if .Description }}
 				{{ .Description }}
@@ -22,9 +24,7 @@
 			{{ else if .Summary }}
 				{{ .Summary }}
 			{{ if .Truncated }}
-			<div class="read-more-link">
-			<a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
-			</div>
+			<span class="ot_read_more"><a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a></span>
 			{{end}}
 			{{ end }}
 		{{ end }}

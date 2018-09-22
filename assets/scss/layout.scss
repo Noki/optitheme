@@ -26,6 +26,7 @@ $text_color_nav: {{ .Site.Params.ot_text_color_nav | default "#ffffff" }};
 $text_color_main: {{ .Site.Params.ot_text_color_main | default "#515151" }};
 $text_color_main_heading: {{ .Site.Params.ot_text_color_main_heading | default "#313131" }};
 $text_color_main_strong: {{ .Site.Params.ot_text_color_main_strong | default "#303030" }};
+$text_color_main_content_date: {{ .Site.Params.ot_text_color_main_content_date | default "#797676" }};
 
 $text_color_teaser: {{ .Site.Params.ot_text_color_teaser | default "#515151" }};
 $text_color_sidebar: {{ .Site.Params.ot_text_color_sidebar | default "#515151" }};
