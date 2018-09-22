@@ -10,12 +10,23 @@
 	{{ .Content }}
 	<!-- range through corresponding content and list it -->
 	{{ if (ne .Params.ot_showlist false) }}
-		<ul>
 		{{ range where .Pages ".Params.ot_showinlist" "ne" false }}
-			<li>
-				<a href="{{.Permalink}}">{{.Title}}</a>
-			</li>
+			<h3 class="post-title">
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</h3>
+			<div>{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+			<!-- use description as teaser if set -->
+			{{ if .Description }}
+				{{ .Description }}
+			<!-- use automatic summary as fallback -->
+			{{ else if .Summary }}
+				{{ .Summary }}
+			{{ if .Truncated }}
+			<div class="read-more-link">
+			<a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
+			</div>
+			{{end}}
+			{{ end }}
 		{{ end }}
-		</ul>
-	{{ end }}
+	{{ end }}	
 {{ end }}
