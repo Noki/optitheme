@@ -2,7 +2,7 @@
 <html {{- with .Site.LanguageCode}} lang="{{.}}"{{end -}}>
 {{partial "head.html" . -}}
 <body>
-<div id="ot_container">
+<div id="ot_container" class="{{.Page.Type}}">
 	<input type="checkbox" id="ot_menu_check">
 	<input type="checkbox" id="ot_consent_check">
 	<div id="ot_header">
