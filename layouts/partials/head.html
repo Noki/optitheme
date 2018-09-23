@@ -11,4 +11,5 @@
 	<link rel="shortcut icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
 	{{ template "google_analytics_async.html" . }}
 	{{ partial "schema-org/schema.html" . }}
+	{{ partial "google_adsense_page_level_ads.html" . }}
 </head>
