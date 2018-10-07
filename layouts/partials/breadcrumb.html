@@ -1,9 +1,14 @@
-{{ $path := split .URL "/" }}
+{{ $level := 1 }}
 <ul itemscope itemtype="http://schema.org/BreadcrumbList">
 	<!-- Show site title as root element-->
 	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">{{ .Site.Title }}</span><span itemprop="position" content="1"></span></a></li>
-	<!-- Show subsections -->
-  	{{ partial "breadcrumbs_recursive.html" (dict "sections" .Site.Home.Sections "level" 1 "path" $path "dir" .URL) }}
+	<!-- Show Categories -->
+	{{ range $taxonomy, $value := $.Site.Taxonomies }}
+		{{ range $index, $category := $.Param $taxonomy -}}
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $taxonomy | relURL }}/{{ . | urlize }}/"><span itemprop="name">{{ $category }}</span><span itemprop="position" content="{{ add $level 1 }}"></span>
+			</a></li>			
+		{{- end }}	
+	{{ end }}	
 	<!-- Show "Home" on homepage, otherwise the page title -->
 	{{ if eq .Kind "home" }}
 		<li>{{ i18n "home" }}</li>
