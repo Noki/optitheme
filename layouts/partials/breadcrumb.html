@@ -5,7 +5,8 @@
 	<!-- Show Categories -->
 	{{ range $taxonomy, $value := $.Site.Taxonomies }}
 		{{ range $index, $category := $.Param $taxonomy -}}
-			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $taxonomy | relURL }}/{{ . | urlize }}/"><span itemprop="name">{{ $category }}</span><span itemprop="position" content="{{ add $level 1 }}"></span>
+			{{ $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) }}
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span>
 			</a></li>			
 		{{- end }}	
 	{{ end }}	
