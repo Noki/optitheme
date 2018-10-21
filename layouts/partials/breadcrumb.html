@@ -1,19 +1,18 @@
 {{ $level := 1 }}
 <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-	<!-- Show site title as root element-->
+	<!-- Show site title as root element -->
 	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">{{ .Site.Title }}</span><span itemprop="position" content="1"></span></a></li>
 	<!-- Show Categories -->
-	{{ range $taxonomy, $value := $.Site.Taxonomies }}
-		{{ range $index, $category := $.Param $taxonomy -}}
-			{{ $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) }}
-			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span>
-			</a></li>			
-		{{- end }}	
-	{{ end }}	
+	{{- range $taxonomy, $value := $.Site.Taxonomies -}}
+		{{- range $index, $category := $.Param $taxonomy -}}
+			{{- $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) -}}
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>			
+		{{- end -}}	
+	{{- end -}}	
 	<!-- Show "Home" on homepage, otherwise the page title -->
-	{{ if eq .Kind "home" }}
+	{{ if eq .Kind "home" -}}
 		<li>{{ i18n "home" }}</li>
-	{{ else }}
+	{{- else -}}
 		<li>{{ .Title }}</li>
-	{{ end }}
+	{{- end }}
 </ul>
