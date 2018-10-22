@@ -21,6 +21,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 		- [x] Parameter to filter unwanted entries
 		- [ ] Teasertext
 		- [ ] Date format
+		- [ ] Pagination
 	- [ ] Social sharing
 		- [ ] Facebook
 		- [ ] Twitter
@@ -29,7 +30,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 - [ ] CSS
 	- [x] CSS-grid module layout
 	- [x] CSS-only off canvas menu
-	- [ ] SCSS for e.g. colors configurable using params in config file
+	- [x] SCSS for e.g. colors configurable using params in config file
 	- [ ] Print CSS
 
 - [ ] Performance
@@ -37,10 +38,10 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] No external Fonts
 	- [x] Minified HTML
 		- [x] Disable Hugo Generator inject
-	- [x] Inline CSS	
+	- [x] Inline CSS
 	- [x] Minified CSS
 	- [ ] Minified JavaScript
-	- [ ] Minified Images	
+	- [ ] Minified Images
 	- [ ] Font-Awesome
 		- [ ] Only required icons
 
@@ -52,7 +53,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 		- [ ] Progressive Web App
 		- [ ] Best practice
 		- [ ] Accessability
-		- [ ] SEO 
+		- [ ] SEO
 
 - [ ] SEO
 	- [x] self referencing canonical tag
@@ -65,7 +66,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [x] Meta description via front matter
 	- [ ] Schema.org markup
 
-- [ ] Business / 
+- [ ] Business /
 	- [x] Analytics
 		- [x] anonymize IP
 	- [ ] Adsense
@@ -138,7 +139,7 @@ googleAnalytics = ""
 [imaging]
 	resampleFilter = "Lanczos"
 	quality = 80
-	anchor = "smart" 
+	anchor = "smart"
 	
 [sitemap]
 	filename = "sitemap.xml"
