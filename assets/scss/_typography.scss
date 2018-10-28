@@ -65,7 +65,6 @@ strong {
   color: $text_color_main_strong;
 }
 
-
 /* Lists */
 ul, ol, dl {
   margin-top: 0;
@@ -80,6 +79,26 @@ dd {
 
 #TableOfContents > ul, #TableOfContents > ul > li {
 display:inline;
+}
+
+/* Pagination */
+ul.pagination {
+  padding: 0;
+  margin-top: 1.5rem;
+  list-style: none;
+  li.page-item {
+    display: inline-block;
+	border: 1px solid #000;
+    a {
+      padding: 0.05em 0.5em;
+    }
+    &.active {
+      a {
+        color: #000;
+        border: 1px solid #000;
+      }
+    }
+  }
 }
 
 /* Misc */
