@@ -14,7 +14,6 @@
 	{{ end }}
 	<!-- range through corresponding content and list it -->
 	{{ if (ne .Params.ot_showlist false) }}
-		{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}
 		{{ range $paginator.Pages }}
 			<h3 class="post-title">
 				<a href="{{ .Permalink }}">{{ .Title }}</a>

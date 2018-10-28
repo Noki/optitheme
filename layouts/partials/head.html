@@ -4,7 +4,9 @@
 	<title>{{- if .Params.ot_seo_title -}}{{.Params.ot_seo_title}}{{- else if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}</title>
 	<meta name="description" content="{{- if .Params.ot_meta_description -}}{{.Params.ot_meta_description}}{{- else -}}{{ .Description }}{{- end -}}" />
 	<meta name="robots" content="{{- with .Params.ot_meta_robots }}{{ . }}{{ else }}index,follow{{ end -}}">
-	<link rel="canonical" href="{{ .Permalink }}">
+	<!-- create paginatior if possible and use proper rel canonical, prev and next-->
+	{{ if or (eq .Kind "home") (eq .Kind "taxonomy") }}{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}<link rel="canonical" href="{{ .Paginator.URL }}">{{ if .Paginator.HasPrev }}<link rel="prev" href="{{ .Paginator.Prev.URL }}" />{{end}}{{ if .Paginator.HasNext }}<link rel="next" href="{{ .Paginator.Next.URL }}" />{{end}}
+	{{else}}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
 	{{ with resources.Get "scss/layout.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify }}<style>{{ .Content | safeCSS }}</style>{{ end }}
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
 	{{/*<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">*/}}
