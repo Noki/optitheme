@@ -4,7 +4,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_VERSION).then(function(cache) {
       return cache.addAll(
-        ['./','./404.html','./favicon.png']
+        ['./','./favicon.png']
       );
     })
   );
