@@ -10,7 +10,7 @@ other= "This website uses cookies to ensure you get the best experience on our w
 [consent-privacy-policy]
 other= "Read privacy policy"
 
-[consent-agree]
+[consent-accept]
 other = "I agree"
 
 [404-title]
@@ -18,3 +18,6 @@ other = "Page not found"
 
 [404-text]
 other = "The page you are looking for was moved, removed, renamed or might never existed. We track these errors automatically, but if the problem persists feel free to contact us."
+
+[read_more]
+other = "Read More…"
