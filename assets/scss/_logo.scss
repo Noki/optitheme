@@ -1,12 +1,14 @@
 #ot_logo {
-  background-color:$background_color_logo;
-  color:$text_color_logo;
-  padding: 1em 2em;
-
+	background-color:$background_color_logo;
+	color:$text_color_logo;
 }
 
 #ot_logo a {
 	color: $link_color_logo;
 	text-decoration: none;
+	display: inline-block;
+	height: 3.5em;
+	line-height: 3.5em;
+	vertical-align: middle;
+	padding: 0 2em;
 }
-

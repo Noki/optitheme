@@ -226,8 +226,13 @@
 		padding: 1em 2em;
 	}
 	#ot_menu_toggle {
-		margin-right: 2em;
-	}	
+		display: inline-block;
+		height: 3.5em;
+		width: 5em;
+		line-height: 3.5em;
+		text-align: center;
+		vertical-align: middle;
+	}
 	input#ot_menu_check ~ #ot_nav {
 		display:none;
 	}
@@ -289,7 +294,12 @@
 		padding: 1em 1em;
 	}
 	#ot_menu_toggle {
-		margin-right: 2em;
+		display: inline-block;
+		height: 3.5em;
+		width: 3.5em;
+		line-height: 3.5em;
+		text-align: center;
+		vertical-align: middle;
 	}
 	input#ot_menu_check ~ #ot_nav {
 		display: none;
