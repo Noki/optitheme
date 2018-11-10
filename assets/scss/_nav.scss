@@ -1,3 +1,18 @@
+#ot_menu_toggle span {
+	position: relative;
+	padding-left: 1em;
+}
+#ot_menu_toggle span:before {
+	  content: "";
+	  position: absolute;
+	  top: 0.25em;
+	  left: 0;
+	  width: 1em;
+	  height: 0.125em;
+	  border-top: 0.375em double $text_color_nav;
+	  border-bottom: 0.125em solid $text_color_nav;
+}
+
 #ot_nav {
 	background-color:$background_color_nav;
 	color:$text_color_nav;
@@ -15,7 +30,6 @@
 
 #ot_nav a {
 	color: $link_color_nav;
-	// text-decoration: underline;
 }
 
 #ot_nav a:hover, #ot_nav a:focus {
