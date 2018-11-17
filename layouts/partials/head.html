@@ -11,7 +11,7 @@
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
 	{{ if (fileExists "static/manifest.json") -}}<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">{{end}}
 	{{ if .Site.Params.ot_theme_color }}<meta name="theme-color" content="{{ .Site.Params.ot_theme_color}}">{{end}}	
-	<link rel="shortcut icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
+	<link rel="icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
 	{{ template "google_analytics_async.html" . }}
 	{{ partial "schema-org/schema.html" . }}
 	{{ partial "google_adsense_page_level_ads.html" . }}
