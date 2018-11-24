@@ -1,8 +1,41 @@
 {{ define "main" }}
-	<!-- create paginatior -->
-	{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}
-	<!-- pulls data from the markdown content of the corresponding _index.md and display it at the top of the first page -->
-	{{ if eq $paginator.PageNumber 1 }}
+	{{ if (ne .Params.ot_showlist false) }}
+		<!-- create paginatior -->
+		{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}
+		<!-- pulls data from the markdown content of the corresponding _index.md and display it at the top of the first page -->
+		{{ if eq $paginator.PageNumber 1 }}
+			<h1>{{ .Title }}</h1>
+			{{ if eq .Params.ot_showdate true }}
+			<span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+			{{ end }}
+			{{ if and (gt .WordCount 400 ) (ne .Params.ot_showtoc false) }}
+			{{.TableOfContents}}
+			{{ end }}
+			{{ .Content }}
+		{{ end }}
+		<!-- range through corresponding content and list it -->
+		{{ if (ne .Params.ot_showlist false) }}
+			{{ range $paginator.Pages }}
+				<h3 class="post-title">
+					<a href="{{ .Permalink }}">{{ .Title }}</a>
+				</h3>
+				{{ if ne .Params.ot_showdate false }}
+				<span class="ot_main_content_date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+				{{ end }}
+				<!-- use description as teaser if set -->
+				{{ if .Description }}
+					{{ .Description }}
+				<!-- use automatic summary as fallback -->
+				{{ else if .Summary }}
+					{{ .Summary }}
+				{{ if .Truncated }}
+				<span class="ot_read_more"><a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a></span>
+				{{end}}
+				{{ end }}
+			{{ end }}
+			{{ template "_internal/pagination.html" . }}
+		{{ end }}
+	{{ else }}
 		<h1>{{ .Title }}</h1>
 		{{ if eq .Params.ot_showdate true }}
 		<span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
@@ -11,28 +44,6 @@
 		{{.TableOfContents}}
 		{{ end }}
 		{{ .Content }}
-	{{ end }}
-	<!-- range through corresponding content and list it -->
-	{{ if (ne .Params.ot_showlist false) }}
-		{{ range $paginator.Pages }}
-			<h3 class="post-title">
-				<a href="{{ .Permalink }}">{{ .Title }}</a>
-			</h3>
-			{{ if ne .Params.ot_showdate false }}
-			<span class="ot_main_content_date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-			{{ end }}
-			<!-- use description as teaser if set -->
-			{{ if .Description }}
-				{{ .Description }}
-			<!-- use automatic summary as fallback -->
-			{{ else if .Summary }}
-				{{ .Summary }}
-			{{ if .Truncated }}
-			<span class="ot_read_more"><a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a></span>
-			{{end}}
-			{{ end }}
-		{{ end }}
-		{{ template "_internal/pagination.html" . }}
 	{{ end }}
 {{ end }}
 
