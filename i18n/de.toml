@@ -18,3 +18,9 @@ other = "Seite nicht gefunden"
 
 [404-text]
 other = "Die von Ihnen gesuchte Seite wurde verschoben, entfernt, umbenannt oder hat nie existiert. Wir verfolgen diese Fehler automatisch, aber wenn das Problem weiterhin besteht, können Sie uns gerne kontaktieren."
+
+[page]
+other = "Seite"
+
+[read_more]
+other = "Weiterlesen…"

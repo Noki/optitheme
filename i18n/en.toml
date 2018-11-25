@@ -19,5 +19,8 @@ other = "Page not found"
 [404-text]
 other = "The page you are looking for was moved, removed, renamed or might never existed. We track these errors automatically, but if the problem persists feel free to contact us."
 
+[page]
+other = "Page"
+
 [read_more]
 other = "Read More…"

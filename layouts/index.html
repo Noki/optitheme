@@ -1,9 +1,7 @@
 {{ define "main" }}
 	{{ if (ne .Params.ot_showlist false) }}
-		<!-- create paginatior -->
-		{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}
 		<!-- pulls data from the markdown content of the corresponding _index.md and display it at the top of the first page -->
-		{{ if eq $paginator.PageNumber 1 }}
+		{{ if eq .Paginator.PageNumber 1 }}
 			<h1>{{ .Title }}</h1>
 			{{ if eq .Params.ot_showdate true }}
 			<span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
@@ -12,10 +10,12 @@
 			{{.TableOfContents}}
 			{{ end }}
 			{{ .Content }}
+		{{ else }}
+			 <h1>{{ .Title }} - {{ T "page" }} {{ .Paginator.PageNumber }}</h1>
 		{{ end }}
 		<!-- range through corresponding content and list it -->
 		{{ if (ne .Params.ot_showlist false) }}
-			{{ range $paginator.Pages }}
+			{{ range .Paginator.Pages }}
 				<h3 class="post-title">
 					<a href="{{ .Permalink }}">{{ .Title }}</a>
 				</h3>
@@ -46,4 +46,3 @@
 		{{ .Content }}
 	{{ end }}
 {{ end }}
-

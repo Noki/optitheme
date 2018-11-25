@@ -6,13 +6,26 @@
 	{{- range $taxonomy, $value := $.Site.Taxonomies -}}
 		{{- range $index, $category := $.Param $taxonomy -}}
 			{{- $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) -}}
-			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>			
-		{{- end -}}	
-	{{- end -}}	
-	<!-- Show "Home" on homepage, otherwise the page title -->
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
+		{{- end -}}
+	{{- end -}}
+	<!-- Show "Home" on homepage, otherwise the page title; add pagination if needed -->
 	{{ if eq .Kind "home" -}}
-		<li>{{ i18n "home" }}</li>
+		{{ if (and .Paginator (gt .Paginator.PageNumber 1))}}
+			<li>{{ T "page" }} {{ .Paginator.PageNumber }}</li>
+		{{ else }}
+			<li>{{ i18n "home" }}</li>
+		{{ end }}
 	{{- else -}}
-		<li>{{ .Title }}</li>
+		{{ if (eq .Kind "taxonomy") }}
+			{{ if (and .Paginator (gt .Paginator.PageNumber 1))}}
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ .Paginator.First.URL }}"><span itemprop="name">{{ .Title }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
+				<li>{{ T "page" }} {{ .Paginator.PageNumber }}</li>
+			{{ else }}
+				<li>{{ .Title }}</li>
+			{{ end }}
+		{{ else }}
+			<li>{{ .Title }}</li>
+		{{ end }}			
 	{{- end }}
 </ul>
