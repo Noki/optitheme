@@ -19,9 +19,9 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 	- [ ] Content listings
 		- [x] Parameter to disable listing
 		- [x] Parameter to filter unwanted entries
-		- [ ] Teasertext
+		- [x] Description as Teasertext
 		- [ ] Date format
-		- [ ] Pagination
+		- [x] Pagination
 	- [ ] Social sharing
 		- [ ] Facebook
 		- [ ] Twitter
@@ -40,7 +40,7 @@ I started using Hugo quite some time ago. I heavily modified the theme to fit my
 		- [x] Disable Hugo Generator inject
 	- [x] Inline CSS
 	- [x] Minified CSS
-	- [ ] Minified JavaScript
+	- [x] Minified JavaScript
 	- [ ] Minified Images
 	- [ ] Font-Awesome
 		- [ ] Only required icons

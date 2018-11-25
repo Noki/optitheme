@@ -2,14 +2,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 	<!-- create paginatior if possible and use it for title, description, proper rel canonical, prev and next -->
-	{{ if and (ne .Params.ot_showlist false) (or (eq .Kind "home") (eq .Kind "taxonomy")) }}{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}{{end}}
+	{{ if and .IsNode (ne .Params.ot_showlist false) }}{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}{{end}}
 	<title>
 		{{- if .Params.ot_seo_title -}}{{.Params.ot_seo_title}}{{- else if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}
-		{{ if (or (eq .Kind "home") (eq .Kind "taxonomy")) }}{{if (and .Paginator (gt .Paginator.PageNumber 1)) }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
+		{{ if .IsNode }}{{if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
 	</title>
-	<meta name="description" content="{{- if .Params.ot_meta_description -}}{{.Params.ot_meta_description}}{{- else -}}{{ .Description }}{{- end -}}{{ if (or (eq .Kind "home") (eq .Kind "taxonomy")) }}{{if  (and .Paginator (gt .Paginator.PageNumber 1)) }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}" />
+	<meta name="description" content="{{- if .Params.ot_meta_description -}}{{ .Params.ot_meta_description }}{{- else -}}{{ .Description }}{{- end -}}{{ if .IsNode }}{{ if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}" />
 	<meta name="robots" content="{{- with .Params.ot_meta_robots }}{{ . }}{{ else }}index,follow{{ end -}}">
-	{{ if (or (eq .Kind "home") (eq .Kind "taxonomy")) }}
+	{{ if .IsNode }}
 		{{ if .Paginator }}
 			<link rel="canonical" href="{{ .Paginator.URL }}">{{ if .Paginator.HasPrev }}<link rel="prev" href="{{ .Paginator.Prev.URL }}" />{{end}}{{ if .Paginator.HasNext }}<link rel="next" href="{{ .Paginator.Next.URL }}" />{{end}}
 		{{ else }}

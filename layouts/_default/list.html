@@ -7,7 +7,7 @@
 			<span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
 			{{ end }}
 			{{ if and (gt .WordCount 400 ) (ne .Params.ot_showtoc false) }}
-			{{.TableOfContents}}
+			{{ .TableOfContents }}
 			{{ end }}
 			{{ .Content }}
 		{{ else }}
