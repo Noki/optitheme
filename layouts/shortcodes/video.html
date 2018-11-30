@@ -1,0 +1,5 @@
+<video itemscope itemtype="http://schema.org/VideoObject" preload="auto" controls {{ if .Get "poster" }}poster="{{ .Get "poster" }}"{{ end }}>
+	{{ if .Get "poster" }}<meta itemprop="thumbnail" content="{{ .Get "poster" }}" />{{ end }}
+	<source src="{{ .Get "src" }}" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
