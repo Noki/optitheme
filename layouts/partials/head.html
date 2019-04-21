@@ -5,13 +5,15 @@
 	{{ if and .IsNode (ne .Params.ot_showlist false) }}{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}{{end}}
 	<title>
 		{{- if .Params.ot_seo_title -}}{{.Params.ot_seo_title}}{{- else if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}
-		{{ if .IsNode }}{{if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
+		{{ if and .IsNode (ne .Params.ot_showlist false) }}{{if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
 	</title>
 	<meta name="description" content="{{- if .Params.ot_meta_description -}}{{ .Params.ot_meta_description }}{{- else -}}{{ .Description }}{{- end -}}{{ if .IsNode }}{{ if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}" />
 	<meta name="robots" content="{{- with .Params.ot_meta_robots }}{{ . }}{{ else }}index,follow{{ end -}}">
 	{{ if .IsNode }}
-		{{ if .Paginator }}
+		{{ if (ne .Params.ot_showlist false) }}
+			{{if .Paginator }}
 			<link rel="canonical" href="{{ .Paginator.URL }}">{{ if .Paginator.HasPrev }}<link rel="prev" href="{{ .Paginator.Prev.URL }}" />{{end}}{{ if .Paginator.HasNext }}<link rel="next" href="{{ .Paginator.Next.URL }}" />{{end}}
+			{{ end }}
 		{{ else }}
 			<link rel="canonical" href="{{ .Permalink }}">
 		{{ end }}
