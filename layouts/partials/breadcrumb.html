@@ -9,7 +9,7 @@
 			{{ if eq $bt $taxonomy }}
 				{{- range $index, $category := $.Param $taxonomy -}}
 					{{- $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) -}}
-					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url | absLangURL}}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
 				{{- end -}}
 			{{- end -}}
 		{{- end -}}
@@ -17,7 +17,7 @@
 		{{ if (not $.Site.Params.ot_breadcrumb_taxonomies) }} 
 				{{- range $index, $category := $.Param $taxonomy -}}
 					{{- $url := (printf "%s/%s" ($taxonomy | relURL) (. | urlize)) -}}
-					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url }}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ $url | absLangURL}}/"><span itemprop="name">{{ with ($.Site.GetPage $url) }}{{ .Title }}{{ end }}</span><span itemprop="position" content="{{ add $level 1 }}"></span></a></li>
 				{{- end -}}
 		{{- end -}}		
 	{{- end -}}
@@ -41,4 +41,3 @@
 		{{ end }}			
 	{{- end }}
 </ul>
-
