@@ -96,6 +96,8 @@ googleAnalytics = ""
 	privacyPolicy = "privacy.html"
 	ot_favicon = "favicon.png"
 
+	ot_service_worker = true
+
 [languages]
     [languages.en]
 		weight = 1

@@ -20,7 +20,7 @@
 		</div>
 		<div id="ot_consent">{{- partial "consent.html" .}}</div>
 	</div>
-	{{ if (ne .Params.ot_service_worker false) }}
+	{{ if eq .Site.Params.ot_service_worker true }}
 	<script type="text/javascript">
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('/sw.js')
