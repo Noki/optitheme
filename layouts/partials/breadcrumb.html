@@ -1,7 +1,7 @@
 {{ $level := 1 }}
 <ul itemscope itemtype="http://schema.org/BreadcrumbList">
 	<!-- Show site title as root element -->
-	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">{{ .Site.Title }}</span><span itemprop="position" content="1"></span></a></li>
+	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ "/" | absLangURL }}"><span itemprop="name">{{ .Site.Title }}</span><span itemprop="position" content="1"></span></a></li>
 	<!-- Show Categories -->
 	{{- range $taxonomy, $value := $.Site.Taxonomies -}}
 		<!-- Only use taxonomies specifided in ot_breadcrumb_taxonomies -->

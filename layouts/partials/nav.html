@@ -1,5 +1,5 @@
 			<ul>
-				<li><a href="{{ .Site.BaseURL }}"><i class="fas fa-home"></i> <span>{{ i18n "home" }}</span></a></li>
+				<li><a href="{{ "/" | absLangURL }}"><i class="fas fa-home"></i> <span>{{ i18n "home" }}</span></a></li>
 				{{ range .Site.Menus.main -}}
 				<li><a href="{{ .URL }}">{{- .Pre }} <span>{{- .Name -}}</span></a></li>
 				{{ end }}
