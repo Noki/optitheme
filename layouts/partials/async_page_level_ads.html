@@ -1,0 +1,20 @@
+{{ if and (and .Site.Params.ot_adsense_ad_client .Site.Params.ot_adsense_page_level_ads) (ne .Page.Params.ot_showads false) }}
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "{{.Site.Params.ot_adsense_ad_client}}",
+          enable_page_level_ads: true
+     });
+</script>
+{{ end }}
+{{ if and .Site.Params.ot_vibrant_media_ipid (ne .Page.Params.ot_showads false) }}
+<script>
+(function(d, s, host, ipid) {
+  var e = d.createElement(s);
+  e.type = 'application/javascript';
+  e.async = !0;
+  e.src = '//' + host + '/intellitxt/front.asp?ipid=' + ipid; 
+  d.getElementsByTagName(s)[0].parentNode.appendChild(e);
+})(document, 'script', 'k.intellitxt.com', {{.Site.Params.ot_vibrant_media_ipid}});
+</script>
+{{ end }}
