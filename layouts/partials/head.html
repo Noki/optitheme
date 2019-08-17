@@ -2,7 +2,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
 	<!-- create paginatior if possible and use it for title, description, proper rel canonical, prev and next -->
-	{{ if and .IsNode (ne .Params.ot_showlist false) }}{{ $paginator := .Paginate (where .Pages ".Params.ot_showinlist" "ne" false) }}{{end}}
+	{{ if and .IsNode (ne .Params.ot_showlist false) }}{{ $paginator := .Paginate (where .Site.RegularPages ".Params.ot_showinlist" "ne" false) }}{{end}}
 	<title>
 		{{- if .Params.ot_seo_title -}}{{.Params.ot_seo_title}}{{- else if .Title -}}{{ .Title }}{{- else -}}{{ .Site.Title }}{{- end -}}
 		{{ if and .IsNode (ne .Params.ot_showlist false) }}{{if gt .Paginator.PageNumber 1 }} - {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
