@@ -25,6 +25,7 @@
 	{{ if (fileExists "static/manifest.json") -}}<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">{{end}}
 	{{ if .Site.Params.ot_theme_color }}<meta name="theme-color" content="{{ .Site.Params.ot_theme_color}}">{{end}}	
 	<link rel="icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
+	<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_apple_touch_icon }}{{ .Params.ot_apple_touch_icon }}{{ else }}appicons/apple-touch-icon-180x180.png{{ end }}">
 	{{ template "google_analytics_async.html" . }}
 	{{ partial "schema-org/schema.html" . }}
 	{{ partial "async_page_level_ads.html" . }}
