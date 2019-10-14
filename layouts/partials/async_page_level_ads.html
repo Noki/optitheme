@@ -1,11 +1,5 @@
 {{ if and (and .Site.Params.ot_adsense_ad_client .Site.Params.ot_adsense_page_level_ads) (ne .Page.Params.ot_showads false) }}
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "{{.Site.Params.ot_adsense_ad_client}}",
-          enable_page_level_ads: true
-     });
-</script>
+<script data-ad-client="{{.Site.Params.ot_adsense_ad_client}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end }}
 {{ if and .Site.Params.ot_vibrant_media_ipid (ne .Page.Params.ot_showads false) }}
 <script>
