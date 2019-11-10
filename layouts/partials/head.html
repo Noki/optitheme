@@ -22,7 +22,7 @@
 	{{ end }}
 	{{ with resources.Get "scss/layout.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify }}<style>{{ .Content | safeCSS }}</style>{{ end }}
 	{{ range .AlternativeOutputFormats -}}{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
-	{{- with ((.Site.GetPage "home").OutputFormats.Get "manifest") }}<link rel="manifest" href="{{ "manifest.json" | relURL }}">{{- end }}
+	{{- with ((.Site.GetPage "home").OutputFormats.Get "manifest") }}<link rel="manifest" href="{{ .Permalink }}">{{- end }}
 	{{ if .Site.Params.ot_theme_color }}<meta name="theme-color" content="{{ .Site.Params.ot_theme_color}}">{{end}}	
 	<link rel="icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_favicon }}{{ .Params.ot_favicon }}{{ else }}favicon.png{{ end }}">
 	<link rel="apple-touch-icon" href="{{ .Site.BaseURL }}{{ if .Params.ot_apple_touch_icon }}{{ .Params.ot_apple_touch_icon }}{{ else }}appicons/apple-touch-icon-180x180.png{{ end }}">
