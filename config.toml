@@ -18,6 +18,9 @@ googleAnalytics = ""
 	privacyPolicy = "privacy.html"
 	ot_favicon = "favicon.png"
 
+	ot_manifest_name = "Optitheme"
+	ot_manifest_short_name = "O-Theme"	
+
 [languages]
     [languages.en]
 		weight = 1
@@ -65,6 +68,16 @@ googleAnalytics = ""
 	
 [sitemap]
 	filename = "sitemap.xml"
+
+[outputFormats]
+  [outputFormats.MANIFEST]
+    mediaType = "application/json"
+    baseName = "manifest"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "MANIFEST"]	
 	
 [frontmatter]
 	date = ["date", "publishDate", "lastmod", ":git"]
