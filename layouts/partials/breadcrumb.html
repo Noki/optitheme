@@ -1,5 +1,5 @@
 {{ $level := 1 }}
-<ul itemscope itemtype="http://schema.org/BreadcrumbList">
+<ul itemscope itemtype="http://schema.org/BreadcrumbList" itemid="#breadcrumb">
 	<!-- Show site title as root element -->
 	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ "/" | absLangURL }}"><span itemprop="name">{{ .Site.Title }}</span><span itemprop="position" content="1"></span></a></li>
 	<!-- Show Categories -->
