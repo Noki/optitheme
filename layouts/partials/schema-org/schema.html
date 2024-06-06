@@ -1,15 +1,27 @@
 {{- if or (in .Params.ot_schema_org "Person") }}
+{{ $data := dict }}
 {{ with resources.Get "data/schema-org-Person.json" }}
-<script type="application/ld+json">{{- transform.Remarshal "json" . | safeJS -}}</script>
+{{ with . | transform.Unmarshal }}
+{{ $data = . }}
+<script type="application/ld+json">{{ $data }}</script>
+{{ end }}
 {{ end }}
 {{ end -}}
 {{- if or (in .Params.ot_schema_org "Organization") }}
+{{ $data := dict }}
 {{ with resources.Get "data/schema-org-Organization.json" }}
-<script type="application/ld+json">{{- transform.Remarshal "json" . | safeJS -}}</script>
+{{ with . | transform.Unmarshal }}
+{{ $data = . }}
+<script type="application/ld+json">{{ $data }}</script>
+{{ end }}
 {{ end }}
 {{ end -}}
 {{- if or (in .Params.ot_schema_org "LodgingBusiness") }}
+{{ $data := dict }}
 {{ with resources.Get "data/schema-org-LodgingBusiness.json" }}
-<script type="application/ld+json">{{- transform.Remarshal "json" . | safeJS -}}</script>
+{{ with . | transform.Unmarshal }}
+{{ $data = . }}
+<script type="application/ld+json">{{ $data }}</script>
+{{ end }}
 {{ end }}
 {{ end -}}
